@@ -1,31 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Date Pipe</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div>
-      <h1>
-        <p class="text">DATE PIPE</p>
-        <br />
-        {{ presentDate | date: 'longDate' }} &nbsp;&nbsp;|&nbsp;&nbsp;
-        {{ presentDate | date: 'M/dd/yyyy' }}
+<h2> App Demonstration</h2>
 
-        <br />
-        {{ presentDate | date: 'EEEE' }}
-        <br />
-        {{ todayO$ | async | date: 'mediumTime' }} {{ presentDate | date: 'z' }}
-      </h1>
-    </div>
-  </body>
-</html>
+<div> 
+  Today's date :- {{presentDate}} 
+</div>
+<div> 
+  Today's date :- {{presentDate | date}} 
+</div>
+<div>
+  This is a short date :- {{presentDate | date: 'shortDate' }} <br/>
+  This line shows the full date :- {{presentDate | date: 'fullDate' }} <br/>
+  This will show a formatted date:- {{presentDate | date: 'M/dd//yyyy'}} <br/>
+  This indicates the hours and minutes:- {{presentDate | date:'h;mm'}}
+  <h3> John Zacqueo Carreon</h3>
+</div>
+<div>
+   Date with uppercase :- {{presentDate | date: 'fullDate' | uppercase}} <br/>
+   Date with lowercase :- {{presentDate | date: 'medium' | lowercase}} <br/>
+</div>
+
+<div>
+  Seconds changing in Time: {{ todayO$ | async | date:'mediumTime' }}
+</div>
+
+<h4> 3 more examples of Date Pipe Options </h4>
+
+<div>
+This is a medium time :- {{presentDate | date: 'mediumTime' }} <br/>
+This is a long time :- {{presentDate | date: 'longTime' }} <br/>
+This is a full time :- {{presentDate | date: 'fullTime' }} <br/>
+
+</div>
